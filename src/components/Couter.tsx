@@ -1,3 +1,5 @@
+import ChildComponent from "./ChildComponent";
+
 type TProps = {
   count: number;
   setCount: React.Dispatch<React.SetStateAction<number>>;
@@ -9,6 +11,7 @@ const Couter = ({ count, setCount, handleIncreaseBtn }: TProps) => {
       <button className="btn btn-accent" onClick={handleIncreaseBtn}>
         Increase
       </button>
+      <ChildComponent count={count}></ChildComponent>
     </div>
   );
 };

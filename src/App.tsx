@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import Couter from "./components/Couter";
+import UserInfoWithUseState from "./components/UserInfoWithUseState";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -9,12 +10,13 @@ function App() {
   };
   return (
     <div className="border border-purple-500 p-10 m-10 ">
-      <h1>{count}</h1>
-      <Couter
+      {/* <h1>{count}</h1> */}
+      {/* <Couter
         count={count}
         setCount={setCount}
         handleIncreaseBtn={handleIncreaseBtn}
-      ></Couter>
+      ></Couter> */}
+      <UserInfoWithUseState></UserInfoWithUseState>
     </div>
   );
 }
