@@ -1,11 +1,14 @@
-import { useState } from "react";
-
-const Couter = () => {
-  const [count, setCount] = useState(0);
+type TProps = {
+  count: number;
+  setCount: React.Dispatch<React.SetStateAction<number>>;
+  handleIncreaseBtn: () => void;
+};
+const Couter = ({ count, setCount, handleIncreaseBtn }: TProps) => {
   return (
-    <div>
-      <h1 className="text-2xl">{count}</h1>
-      <button onClick={() => setCount(count + 1)}>Increase</button>
+    <div className="border border-red-500 p-10 m-10">
+      <button className="btn btn-accent" onClick={handleIncreaseBtn}>
+        Increase
+      </button>
     </div>
   );
 };
