@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
-import Couter from "./components/Couter";
-import UserInfoWithUseState from "./components/UserInfoWithUseState";
+import TodoProvider from "./context/TodoProvider";
+import TodoForm from "./components/todo/TodoForm";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -9,15 +9,19 @@ function App() {
     setCount(count + 1);
   };
   return (
-    <div className="border border-purple-500 p-10 m-10 ">
-      {/* <h1>{count}</h1> */}
-      {/* <Couter
+    <TodoProvider>
+      <div className="border border-purple-500 p-10 m-10 ">
+        {/* <h1>{count}</h1> */}
+        {/* <Couter
         count={count}
         setCount={setCount}
         handleIncreaseBtn={handleIncreaseBtn}
       ></Couter> */}
-      <UserInfoWithUseState></UserInfoWithUseState>
-    </div>
+        {/* <UserInfowithUserReducer></UserInfowithUserReducer> */}
+
+        <TodoForm></TodoForm>
+      </div>
+    </TodoProvider>
   );
 }
 
