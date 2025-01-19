@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import TodoProvider from "./context/TodoProvider";
 import TodoForm from "./components/todo/TodoForm";
+import TodoList from "./components/todo/TodoList";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -20,6 +21,7 @@ function App() {
         {/* <UserInfowithUserReducer></UserInfowithUserReducer> */}
 
         <TodoForm></TodoForm>
+        <TodoList></TodoList>
       </div>
     </TodoProvider>
   );

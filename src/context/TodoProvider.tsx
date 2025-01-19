@@ -6,21 +6,26 @@ export const TodoContext = createContext<
 type TodoProviderProps = {
   children: React.ReactNode;
 };
-type TTodo = {
+export type TTodo = {
   id: string;
   title: string;
   isCompleted: boolean;
 };
 type TAction = {
   type: string;
-  payload: TTodo;
+  payload: TTodo | string;
 };
 const initialState: TTodo[] = [];
 const reducer = (currentState: TTodo, action: TAction) => {
   switch (action.type) {
     case "addTodo":
       return [...currentState, action.payload];
-
+    case "testComplete":
+      return currentState.map((item) =>
+        item.id === action.payload
+          ? { ...item, isCompleted: !item.isCompleted }
+          : item
+      );
     default:
       return currentState;
   }
